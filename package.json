@@ -10,6 +10,9 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "johnny-five": "latest"
+    "johnny-five": "latest",
+    "raspi-io": "latest",
+    "pitft":"latest",
+    "sleep":"latest"
   }
 }
