@@ -1,19 +1,20 @@
 {
-  "name": "resinio_test",
-  "version": "0.0.0",
-  "description": "resin.io + Johnny-Five test",
-  "main": "server.js",
-  "author": "Bryan Hughes <bryan@theoreticalideations.com>",
-  "contributors": [
-    { "name": "Bryan Hughes", "email": "<bryan@theoreticalideations.com>" },
-    { "name": "Flarnie M."}
-  ],
-  "license": "MIT",
+  "name": "resin-piTFT-rpi",
+  "description": "Display a clock on piTFT screen",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "preinstall": ""
+  },
+  "version": "0.0.3",
   "dependencies": {
-    "raspi-serial": "latest",
-    "johnny-five": "latest",
-    "raspi-io": "latest",
-    "pitft":"latest",
-    "sleep":"latest"
+    "pitft": "~0.0.11",
+    "sleep":"latest",
+    "johnny-five":"latest"
+  },
+  "engines": {
+    "node": "0.10.22"
   }
 }

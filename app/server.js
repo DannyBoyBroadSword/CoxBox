@@ -1,4 +1,3 @@
-var raspi = require("raspi-io");
 var five = require("johnny-five");
 var pitft = require("pitft");
 var sleep = require('sleep');
