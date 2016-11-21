@@ -8,6 +8,8 @@ var fb = pitft("/dev/fb1"); // Returns a framebuffer in direct mode.  See the cl
 // Clear the screen buffer
 fb.clear();
 
+fb.font("fantasy", 12); // Use the "fantasy" font with size 12
+
 var xMax = fb.size().width;
 var yMax = fb.size().height;
 
@@ -32,24 +34,23 @@ board.on("ready", function() {
     pins: ['P1-8', 'P1-10']
   });
 
-  console.log("kk about todo shit");
 
   // If latitude, longitude, course or speed change log it
 
-  gps.on("change", function() {
-    //fb.clear();
+  //gps.on("change", function() {
+
+  while (1=1){
+    fb.clear();
     console.log("position");
     console.log("  latitude   : ", this.latitude);
-    fb.font("fantasy", 12); // Use the "fantasy" font with size 12
-    fb.text(20, 20, "SUP HOMEY", false); // Draw the text non-centered, rotated _a_ degrees
-    //fb.text(20,20,this.latitude,false);
+    fb.text(20, 20, this.latitude, false); // Draw the text non-centered, rotated _a_ degrees
     console.log("  longitude  : ", this.longitude);
     fb.font("fantasy", 12); // Use the "fantasy" font with size 12
     fb.text(0, 20, this.longitude, false); // Draw the text non-centered, rotated _a_ degrees
     console.log("--------------------------------------");
-    fb.blit();
     sleep.sleep(5)
+  }
 
 
-  });
-});
+  //});
+//});
