@@ -13,11 +13,10 @@ WORKDIR /usr/src/app
 COPY package.json ./
 
 #install node dependencies
-RUN JOBS=MAX npm install --unsafe-perm --production && npm cache clean
+RUN JOBS=MAX npm install raspi && npm install --unsafe-perm --production && npm cache clean
 
 # Copy all of files here for caching purposes
 COPY /app ./
-
 
 #make it a command
 CMD ["chmod +x ./start.sh"]
