@@ -1,7 +1,7 @@
 # Use base image for device arch with node installed
 FROM resin/raspberrypi-node
 
-RUN apt-get update && apt-get install libcairo2-dev
+RUN apt-get update && apt-get install libcairo2-dev git
 
 # create src dir
 RUN mkdir -p /usr/src/app/
@@ -18,7 +18,6 @@ RUN JOBS=MAX npm install --unsafe-perm --production && npm cache clean
 # Copy all of files here for caching purposes
 COPY /app ./
 
-CMD ["apt-get install git"]
 
 #make it a command
 CMD ["chmod +x ./start.sh"]
