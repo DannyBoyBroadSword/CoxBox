@@ -10,6 +10,7 @@
   },
   "version": "0.0.3",
   "dependencies": {
+    "raspi":"latest",
     "raspi-wiringpi":"latest",
     "raspi-io":"latest",
     "pitft": "~0.0.11",
