@@ -1,4 +1,5 @@
-//var five = require("johnny-five");
+var Raspi = require("raspi-io");
+var five = require("johnny-five");
 var pitft = require("pitft");
 var sleep = require('sleep');
 
@@ -16,9 +17,9 @@ fb.color(1, 1, 1); // Set the color to white
 fb.font("fantasy", 12); // Use the "fantasy" font with size 12
 fb.text(0, 20, "HI", false); // Draw the text non-centered, rotated _a_ degrees
 
-/*
+
 var board = new five.Board({
-  io: new raspi()
+  io: new // REVIEW: aspi()
 });
 
 board.on("ready", function() {
@@ -43,4 +44,3 @@ board.on("ready", function() {
 
   });
 });
-*/
