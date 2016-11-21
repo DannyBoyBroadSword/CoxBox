@@ -12,7 +12,8 @@
   "dependencies": {
     "pitft": "~0.0.11",
     "sleep":"latest",
-    "johnny-five":"latest"
+    "johnny-five":"latest",
+    "raspi-io":"latest"
   },
   "engines": {
     "node": "0.10.22"
