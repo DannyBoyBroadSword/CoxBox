@@ -19,7 +19,7 @@ fb.text(0, 20, "HI", false); // Draw the text non-centered, rotated _a_ degrees
 
 
 var board = new five.Board({
-  io: new // REVIEW: aspi()
+  io: new Raspi()
 });
 
 board.on("ready", function() {
