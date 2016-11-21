@@ -1,4 +1,4 @@
-var five = require("johnny-five");
+//var five = require("johnny-five");
 var pitft = require("pitft");
 var sleep = require('sleep');
 
@@ -13,17 +13,24 @@ var yMax = fb.size().height;
 fb.color(1, 1, 1); // Set the color to white
 
 
+fb.font("fantasy", 12); // Use the "fantasy" font with size 12
+fb.text(0, 20, "HI", false); // Draw the text non-centered, rotated _a_ degrees
+
+/*
 var board = new five.Board({
   io: new raspi()
 });
+*/
 
+/*
 board.on("ready", function() {
   var gps = new five.GPS({
     breakout: "ADAFRUIT_ULTIMATE_GPS",
     pins: ['P1-8', 'P1-10']
   });
-
+*/
   // If latitude, longitude, course or speed change log it
+  /*
   gps.on("change", function() {
     console.log("position");
     console.log("  latitude   : ", this.latitude);
