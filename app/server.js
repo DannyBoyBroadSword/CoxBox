@@ -21,13 +21,16 @@ fb.font("fantasy", 12); // Use the "fantasy" font with size 12
 console.log("Starting Board");
 
 fb.text(20,20,"HAY",false);
-sleep.sleep(5);
 
 var board = new five.Board({
   io: new Raspi()
+  fb.clear();
+  fb.text(20,20,"asaw dude",false);
 });
 
 board.on("ready", function() {
+  fb.clear();
+  fb.text(20,20,"wait what",false);
   console.log("this might work");
 
   var gps = new five.GPS({
