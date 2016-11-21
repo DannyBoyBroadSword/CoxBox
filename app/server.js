@@ -16,21 +16,29 @@ fb.color(1, 1, 1); // Set the color to white
 
 fb.font("fantasy", 12); // Use the "fantasy" font with size 12
 fb.text(0, 20, "HI", false); // Draw the text non-centered, rotated _a_ degrees
+sleep.sleep(5);
 
+console.log("Starting Board");
 
 var board = new five.Board({
   io: new Raspi()
+  console.log("instantiated rpi");
 });
 
 board.on("ready", function() {
+  console.log("this might work");
+
   var gps = new five.GPS({
     breakout: "ADAFRUIT_ULTIMATE_GPS",
     pins: ['P1-8', 'P1-10']
   });
 
+  console.log("kk about todo shit");
+
   // If latitude, longitude, course or speed change log it
 
   gps.on("change", function() {
+    fb.clear();
     console.log("position");
     console.log("  latitude   : ", this.latitude);
     fb.font("fantasy", 12); // Use the "fantasy" font with size 12
