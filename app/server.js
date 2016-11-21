@@ -20,6 +20,9 @@ fb.font("fantasy", 12); // Use the "fantasy" font with size 12
 
 console.log("Starting Board");
 
+fb.text(20,20,"HAY",false);
+sleep.sleep(5);
+
 var board = new five.Board({
   io: new Raspi()
 });
@@ -33,8 +36,6 @@ board.on("ready", function() {
   });
 
 
-  fb.text(20,20,"HAY",false);
-  sleep.sleep(5);
 
   gps.on("change", function() {
     console.log("position");
