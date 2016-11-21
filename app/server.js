@@ -22,7 +22,6 @@ console.log("Starting Board");
 
 var board = new five.Board({
   io: new Raspi()
-  console.log("instantiated rpi");
 });
 
 board.on("ready", function() {
