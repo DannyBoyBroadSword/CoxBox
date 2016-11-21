@@ -20,17 +20,15 @@ fb.text(0, 20, "HI", false); // Draw the text non-centered, rotated _a_ degrees
 var board = new five.Board({
   io: new raspi()
 });
-*/
 
-/*
 board.on("ready", function() {
   var gps = new five.GPS({
     breakout: "ADAFRUIT_ULTIMATE_GPS",
     pins: ['P1-8', 'P1-10']
   });
-*/
+
   // If latitude, longitude, course or speed change log it
-  /*
+
   gps.on("change", function() {
     console.log("position");
     console.log("  latitude   : ", this.latitude);
@@ -45,3 +43,4 @@ board.on("ready", function() {
 
   });
 });
+*/
