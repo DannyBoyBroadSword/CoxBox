@@ -37,7 +37,6 @@ board.on("ready", function() {
   // If latitude, longitude, course or speed change log it
 
   gps.on("change", function() {
-    fb.clear();
     console.log("position");
     console.log("  latitude   : ", this.latitude);
     fb.font("fantasy", 12); // Use the "fantasy" font with size 12
@@ -46,8 +45,9 @@ board.on("ready", function() {
     fb.font("fantasy", 12); // Use the "fantasy" font with size 12
     fb.text(0, 20, this.longitude, false); // Draw the text non-centered, rotated _a_ degrees
     console.log("--------------------------------------");
+    fb.blit();
     sleep.sleep(5)
-    fb.clear();
+
 
   });
 });
