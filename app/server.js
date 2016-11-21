@@ -1,4 +1,3 @@
-var Raspi = require('raspi-io');
 var five = require("johnny-five");
 var pitft = require("pitft");
 var sleep = require('sleep');
@@ -15,7 +14,7 @@ fb.color(1, 1, 1); // Set the color to white
 
 
 var board = new five.Board({
-  io: new Raspi()
+  io: new raspi()
 });
 
 board.on("ready", function() {
