@@ -8,13 +8,11 @@ var fb = pitft("/dev/fb1",true); // Returns a framebuffer in direct mode.  See t
 // Clear the screen buffer
 fb.clear();
 
-fb.font("fantasy", 12); // Use the "fantasy" font with size 12
-
 var xMax = fb.size().width;
 var yMax = fb.size().height;
 
 fb.color(1, 1, 1); // Set the color to white
-
+fb.font("fantasy", 12); // Use the "fantasy" font with size 12
 
 //fb.font("fantasy", 12); // Use the "fantasy" font with size 12
 //fb.text(0, 20, "HI", false); // Draw the text non-centered, rotated _a_ degrees
@@ -35,7 +33,8 @@ board.on("ready", function() {
   });
 
 
-  // If latitude, longitude, course or speed change log it
+  fb.text(20,20,this.latitude,false);
+  sleep.sleep(5);
 
   gps.on("change", function() {
     console.log("position");
@@ -46,6 +45,7 @@ board.on("ready", function() {
     fb.font("fantasy", 12); // Use the "fantasy" font with size 12
     fb.text(0, 20, this.longitude, false); // Draw the text non-centered, rotated _a_ degrees
     console.log("--------------------------------------");
-    fb.blit();
+    sleep.sleep(5);
+    fb.clear();
   });
 });
