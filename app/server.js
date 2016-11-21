@@ -24,8 +24,6 @@ fb.text(20,20,"HAY",false);
 
 var board = new five.Board({
   io: new Raspi()
-  fb.clear();
-  fb.text(20,20,"asaw dude",false);
 });
 
 board.on("ready", function() {
