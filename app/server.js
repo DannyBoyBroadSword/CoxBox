@@ -37,6 +37,7 @@ board.on("ready", function() {
   // If latitude, longitude, course or speed change log it
 
   gps.on("change", function() {
+    fb.clear();
     console.log("position");
     console.log("  latitude   : ", this.latitude);
     fb.font("fantasy", 12); // Use the "fantasy" font with size 12
