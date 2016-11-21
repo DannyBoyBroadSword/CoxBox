@@ -14,9 +14,9 @@ var yMax = fb.size().height;
 fb.color(1, 1, 1); // Set the color to white
 
 
-fb.font("fantasy", 12); // Use the "fantasy" font with size 12
-fb.text(0, 20, "HI", false); // Draw the text non-centered, rotated _a_ degrees
-sleep.sleep(5);
+//fb.font("fantasy", 12); // Use the "fantasy" font with size 12
+//fb.text(0, 20, "HI", false); // Draw the text non-centered, rotated _a_ degrees
+//sleep.sleep(5);
 
 console.log("Starting Board");
 
@@ -37,11 +37,12 @@ board.on("ready", function() {
   // If latitude, longitude, course or speed change log it
 
   gps.on("change", function() {
-    fb.clear();
+    //fb.clear();
     console.log("position");
     console.log("  latitude   : ", this.latitude);
     fb.font("fantasy", 12); // Use the "fantasy" font with size 12
-    fb.text(20, 20, this.latitude, false); // Draw the text non-centered, rotated _a_ degrees
+    fb.text(20, 20, "SUP HOMEY", false); // Draw the text non-centered, rotated _a_ degrees
+    //fb.text(20,20,this.latitude,false);
     console.log("  longitude  : ", this.longitude);
     fb.font("fantasy", 12); // Use the "fantasy" font with size 12
     fb.text(0, 20, this.longitude, false); // Draw the text non-centered, rotated _a_ degrees
