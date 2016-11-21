@@ -33,7 +33,7 @@ board.on("ready", function() {
   });
 
 
-  fb.text(20,20,this.latitude,false);
+  fb.text(20,20,gps.latitude,false);
   sleep.sleep(5);
 
   gps.on("change", function() {
