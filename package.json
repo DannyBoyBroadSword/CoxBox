@@ -10,10 +10,10 @@
   },
   "version": "0.0.3",
   "dependencies": {
+    "raspi-io":"latest",
     "pitft": "~0.0.11",
     "sleep":"latest",
-    "johnny-five":"latest",
-    "raspi-io":"latest"
+    "johnny-five":"latest"
   },
   "engines": {
     "node": "0.10.22"
