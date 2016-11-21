@@ -37,20 +37,18 @@ board.on("ready", function() {
 
   // If latitude, longitude, course or speed change log it
 
-  //gps.on("change", function() {
-
-  while (1=1){
+  gps.on("change", function() {
     fb.clear();
     console.log("position");
     console.log("  latitude   : ", this.latitude);
-    fb.text(20, 20, this.latitude, false); // Draw the text non-centered, rotated _a_ degrees
+    fb.text(20,20,"bruh",true);
+    fb.text(0, 20, this.latitude, false); // Draw the text non-centered, rotated _a_ degrees
     console.log("  longitude  : ", this.longitude);
     fb.font("fantasy", 12); // Use the "fantasy" font with size 12
     fb.text(0, 20, this.longitude, false); // Draw the text non-centered, rotated _a_ degrees
     console.log("--------------------------------------");
     sleep.sleep(5)
-  }
 
 
-  //});
-//});
+  });
+});
