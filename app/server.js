@@ -21,6 +21,8 @@ fb.font("fantasy", 12); // Use the "fantasy" font with size 12
 console.log("Starting Board");
 
 fb.text(20,20,"HAY",false);
+sleep.sleep(5);
+fb.text(20,20,"changed",false);
 
 var board = new five.Board({
   io: new Raspi()
