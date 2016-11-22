@@ -32,20 +32,22 @@ function displayPush(){
     fb.text(50,50,longitude,true)     // The function returns the product of p1 and p2
 }
 
-sleep.sleep(5);
+board.on("ready", function() {
 
-var gps = new five.GPS({
+  console.log("this might work");
+
+  var gps = new five.GPS({
     breakout: "ADAFRUIT_ULTIMATE_GPS",
     pins: ['P1-8', 'P1-10']
   });
 
-sleep.sleep(5);
-
-  console.log("position");
-  console.log("  latitude   : ", this.latitude);
-  latitude = this.latitude;
-  console.log("  longitude  : ", this.longitude);
-  longitude = this.longitude
-  console.log("--------------------------------------");
-
-  displayPush();
+  gps.once("change", function() {
+    console.log("position");
+    console.log("  latitude   : ", this.latitude);
+    latitude = this.latitude;
+    console.log("  longitude  : ", this.longitude);
+    longitude = this.longitude
+    console.log("--------------------------------------");
+    displayPush();
+  });
+});
