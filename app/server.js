@@ -14,16 +14,16 @@ fb.color(1, 1, 1); // Set the color to whit
 fb.font("fantasy", 12); // Use the "fantasy" font with size 12
 
 fb.text(0,20,"Latitude:",false);
-fb.text(20,20,"Longitude:",false);
-fb.text(0,-40,"Speed:",false);
-fb.text(0,-60,"Course:",false);
-fb.text(0,-80,"Longitude:",false);
-fb.text(0,-100,"Balance:",false);
-fb.text(0,-120,"Volume:",false);
-fb.text(0,-140,"Stroke Rate:",false);
-fb.text(0,-160,"/500:",false);
-fb.text(0,-180,"Race Mode: 5000m",false);
-fb.text(0,-200,"Estimated Finish time:",false);
+fb.text(0,40,"Longitude:",false);
+fb.text(0,60,"Speed:",false);
+fb.text(0,80,"Course:",false);
+fb.text(0,100,"Longitude:",false);
+fb.text(0,120,"Balance:",false);
+fb.text(0,140,"Volume:",false);
+fb.text(0,160,"Stroke Rate:",false);
+fb.text(0,180,"/500:",false);
+fb.text(0,200,"Race Mode: 5000m",false);
+fb.text(0,220,"Estimated Finish time:",false);
 //fb.font("fantasy", 12); // Use the "fantasy" font with size 12
 //fb.text(0, 20, "HI", false); // Draw the text non-centered, rotated _a_ degrees
 //sleep.sleep(5);
@@ -51,6 +51,7 @@ board.on("ready", function() {
   });
 
   gps.on("change", function() {
+    fb.text(0,20,this.latitude,false);
     console.log("position");
     console.log("  latitude   : ", this.latitude);
     console.log("  longitude  : ", this.longitude);
