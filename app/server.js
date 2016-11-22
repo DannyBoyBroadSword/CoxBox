@@ -33,7 +33,7 @@ var board = new five.Board({
 
 board.on("ready", function() {
   //Prepare i2c Data
-  new five.Pin('P1-3');
+  new five.Pin('SDA0');
 
   //prepare buttons from TFT
   var buttonOne = new five.Button(0);
