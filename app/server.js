@@ -84,6 +84,10 @@ board.on("ready", function() {
     console.log("  altitude   : ", gps.altitude);
     console.log("MPU6050 Roll Data");
     console.log("  pitch   : ", imu.gyro.pitch);
+    console.log("MPU6050 Starting Acceleration");
+    console.log("  x   : ", imu.accelerometer.x);
+    console.log("  y   : ", imu.accelerometer.y);
+    console.log("  z   : ", imu.accelerometer.z);
     //console.log("Volume");
     //console.log("  Volume   : ",volumecontrol.currentVolume);
     //console.log("Stroke Rate");
