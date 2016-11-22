@@ -6,7 +6,8 @@ var sleep = require('sleep');
 var fb = pitft("/dev/fb1"); // Returns a framebuffer in direct mode.  See the clock.js example for double buffering mode
 var xMax = fb.size().width;
 var yMax = fb.size().height;
-
+var latitude;
+var longitude;
 // Clear the screen buffer
 fb.clear();
 fb.color(1, 1, 1); // Set the color to whit
@@ -25,9 +26,10 @@ var board = new five.Board({
   io: new Raspi()
 });
 
-function displayPush(text,x,y,centered) {
+function displayPush(){
     fb.clear();
-    fb.text(x,y,text,centered);     // The function returns the product of p1 and p2
+    fb.text(0,50,latitude,true);
+    fb.text(50,50,longitude,true)     // The function returns the product of p1 and p2
 }
 
 board.on("ready", function() {
@@ -42,8 +44,10 @@ board.on("ready", function() {
   gps.on("change", function() {
     console.log("position");
     console.log("  latitude   : ", this.latitude);
-    displayPush(this.latitude,0,20,true);
+    latitude = this.latitude;
     console.log("  longitude  : ", this.longitude);
+    longitude = this.longitude
     console.log("--------------------------------------");
+    displayPush();
   });
 });
