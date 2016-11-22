@@ -13,7 +13,7 @@ var sendBuffer = new events.EventEmitter();
 
 sendBuffer.on('data', function(){
    fb.clear();
-   fb.text(0,50,"Fuck",true);
+   fb.text(0,50,"yes",true);
 });
 
 // Fire the connection event
@@ -24,9 +24,6 @@ fb.clear();
 fb.color(1, 1, 1); // Set the color to whit
 fb.font("fantasy", 12); // Use the "fantasy" font with size 12
 
-fb.text(20,20,"HAY",false);
-sleep.sleep(5);
-fb.text(20,20,"changed",false);
 //fb.font("fantasy", 12); // Use the "fantasy" font with size 12
 //fb.text(0, 20, "HI", false); // Draw the text non-centered, rotated _a_ degrees
 //sleep.sleep(5);
@@ -37,12 +34,14 @@ var board = new five.Board({
   io: new Raspi()
 });
 
+/*
 function displayPush(){
     console.log("displayPush");
     fb.clear();
     fb.text(0,50,latitude,true);
     fb.text(50,50,longitude,true)     // The function returns the product of p1 and p2
 }
+*/
 
 board.on("ready", function() {
 
@@ -54,11 +53,13 @@ board.on("ready", function() {
   });
 
   gps.on("change", function() {
+    fb.clear();
     console.log("position");
     console.log("  latitude   : ", this.latitude);
+    fb.text(0,50,this.latitude,true);
     console.log("  longitude  : ", this.longitude);
-    longitude = this.longitude
+    fb.text(50,50,this.latitude,true);
     console.log("--------------------------------------");
-    sendBuffer.emit('data');
+    //sendBuffer.emit('data');
   });
 });
