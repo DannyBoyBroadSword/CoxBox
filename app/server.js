@@ -74,7 +74,7 @@ board.on("ready", function() {
   });
   */
 
-  imu.on("change", function() {
+  gps.on("change", function() {
     console.log("GPS Data");
     console.log("  Speed   : ", gps.speed);
     console.log("  Course  : ", gps.course);
