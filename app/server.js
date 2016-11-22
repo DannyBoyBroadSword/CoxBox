@@ -33,7 +33,7 @@ var board = new five.Board({
 
 board.on("ready", function() {
   //Prepare i2c Data
-  new five.Pin('SDA0');
+  //new five.Pin('SDA0');
 
   //prepare buttons from TFT
   var buttonOne = new five.Button(0);
@@ -53,6 +53,7 @@ board.on("ready", function() {
     pins: ['P1-8', 'P1-10']
   });
 
+  /*
   //create a function that reads the Volume.
   function readVolume(address){
     return defaultVolumeLevel;
@@ -106,7 +107,6 @@ board.on("ready", function() {
     //doSumting();
   });
 
-  /*
   touchscreen.on("data.touch", function() {
     var screenX = ((270 - 50) / (693 - 3307)) * data.x + 320;
     var screenY = ((190 - 50) / (3220 - 996)) * data.y;
