@@ -127,7 +127,7 @@ board.on("ready", function() {
     console.log("  pitch   : ", imu.gyro.pitch);
     console.log("MPU6050 Starting Acceleration");
     console.log("  Acceleration   : ", imu.accelerometer.acceleration);
-    console.logt("MPU6050 Temp");
+    console.log("MPU6050 Temp");
     console.log("  fahrenheit   : ", imu.thermometer.fahrenheit);
     console.log("Volume");
     console.log("  Volume   : ",volumeLevel);
