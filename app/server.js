@@ -27,6 +27,7 @@ var board = new five.Board({
 });
 
 function displayPush(){
+    console.log("displayPush");
     fb.clear();
     fb.text(0,50,latitude,true);
     fb.text(50,50,longitude,true)     // The function returns the product of p1 and p2
@@ -41,7 +42,7 @@ board.on("ready", function() {
     pins: ['P1-8', 'P1-10']
   });
 
-  gps.once("change", function() {
+  gps.on("change", function() {
     console.log("position");
     console.log("  latitude   : ", this.latitude);
     latitude = this.latitude;
