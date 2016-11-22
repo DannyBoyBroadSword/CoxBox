@@ -132,7 +132,7 @@ board.on("ready", function() {
     console.log("Volume");
     console.log("  Volume   : ",volumeLevel);
     console.log("Stroke Rate");
-    console.log("  Stroke Rate   : ",readStrokeRate(ReadStrokeAddress));
+    //console.log("  Stroke Rate   : ",readStrokeRate(ReadStrokeAddress));
     console.log("--------------------------------------");
   });
 });
