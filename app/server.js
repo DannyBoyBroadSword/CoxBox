@@ -4,33 +4,34 @@ var pitft = require("pitft");
 var sleep = require('sleep');
 
 var fb = pitft("/dev/fb1"); // Returns a framebuffer in direct mode.  See the clock.js example for double buffering mode
-
-// Clear the screen buffer
-fb.clear();
-
 var xMax = fb.size().width;
 var yMax = fb.size().height;
 
+// Clear the screen buffer
+fb.clear();
 fb.color(1, 1, 1); // Set the color to whit
 fb.font("fantasy", 12); // Use the "fantasy" font with size 12
 
+fb.text(20,20,"HAY",false);
+sleep.sleep(5);
+fb.text(20,20,"changed",false);
 //fb.font("fantasy", 12); // Use the "fantasy" font with size 12
 //fb.text(0, 20, "HI", false); // Draw the text non-centered, rotated _a_ degrees
 //sleep.sleep(5);
 
 console.log("Starting Board");
 
-fb.text(20,20,"HAY",false);
-sleep.sleep(5);
-fb.text(20,20,"changed",false);
-
 var board = new five.Board({
   io: new Raspi()
 });
 
+function displayPush(text,x,y,centered) {
+    fb.clear();
+    fb.text(x,y,text,centered);     // The function returns the product of p1 and p2
+}
+
 board.on("ready", function() {
-  fb.clear();
-  fb.text(20,20,"wait what",false);
+
   console.log("this might work");
 
   var gps = new five.GPS({
@@ -38,18 +39,11 @@ board.on("ready", function() {
     pins: ['P1-8', 'P1-10']
   });
 
-
-
   gps.on("change", function() {
     console.log("position");
     console.log("  latitude   : ", this.latitude);
-    fb.text(20,20,"bruh",true);
-    fb.text(0, 20, this.latitude, false); // Draw the text non-centered, rotated _a_ degrees
+    displayPush(this.latitude,0,20,true);
     console.log("  longitude  : ", this.longitude);
-    fb.font("fantasy", 12); // Use the "fantasy" font with size 12
-    fb.text(0, 20, this.longitude, false); // Draw the text non-centered, rotated _a_ degrees
     console.log("--------------------------------------");
-    sleep.sleep(5);
-    fb.clear();
   });
 });
