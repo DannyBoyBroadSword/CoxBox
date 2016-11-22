@@ -88,6 +88,8 @@ board.on("ready", function() {
     console.log("  x   : ", imu.accelerometer.x);
     console.log("  y   : ", imu.accelerometer.y);
     console.log("  z   : ", imu.accelerometer.z);
+    console.logt("MPU6050 Temp");
+    console.log("  fahrenheit   : ", imu.thermometer.fahrenheit);
     //console.log("Volume");
     //console.log("  Volume   : ",volumecontrol.currentVolume);
     //console.log("Stroke Rate");
