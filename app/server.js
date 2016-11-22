@@ -5,7 +5,9 @@ var sleep = require('sleep');
 
 var fb = pitft("/dev/fb1"); // Returns a framebuffer in direct mode.  See the clock.js example for double buffering mode
 var xMax = fb.size().width;
+console.log(xMax);
 var yMax = fb.size().height;
+console.log(yMax);
 var latitude;
 var longitude;
 // Clear the screen buffer
