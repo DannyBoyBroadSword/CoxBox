@@ -3,7 +3,7 @@ var five = require("johnny-five");
 var pitft = require("pitft");
 var sleep = require('sleep');
 
-var fb = pitft("/dev/fb1",true); // Returns a framebuffer in direct mode.  See the clock.js example for double buffering mode
+var fb = pitft("/dev/fb1"); // Returns a framebuffer in direct mode.  See the clock.js example for double buffering mode
 
 var xMax = fb.size().width;
 console.log(xMax);
@@ -27,7 +27,9 @@ fb.text(0,160,"Stroke Rate:",false);
 fb.text(0,180,"/500:",false);
 fb.text(0,200,"Race Mode: 5000m",false);
 fb.text(0,220,"Estimated Finish time:",false);
+
 sleep.sleep(5)
+
 fb.clear();
 fb.text(0,20,"Latitude: ya",false);
 fb.text(0,40,"Longitude: boy",false);
@@ -94,8 +96,8 @@ board.on("ready", function() {
   gps.on("change", function() {
     console.log("position");
     console.log("  latitude   : ", this.latitude);
-    fb.text(100,240,this.latitude,false);
-    fb.blit();
+    //fb.text(100,240,this.latitude,false);
+    //fb.blit();
     console.log("  longitude  : ", this.longitude);
     console.log("--------------------------------------");
   });
