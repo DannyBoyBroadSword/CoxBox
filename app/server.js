@@ -28,6 +28,7 @@ fb.text(0,180,"/500:",false);
 fb.text(0,200,"Race Mode: 5000m",false);
 fb.text(0,220,"Estimated Finish time:",false);
 
+sleep.sleep(5);
 /*
 sleep.sleep(5)
 
