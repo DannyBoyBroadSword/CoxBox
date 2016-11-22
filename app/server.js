@@ -96,16 +96,14 @@ board.on("ready", function() {
   });
   */
 
-  gps.on("change", function() {
+  imu.on("change", function() {
     console.log("position");
-    console.log("  Speed   : ", this.speed);
-    console.log("  Course  : ", this.course);
-    console.log("  latitude   : ", this.latitude);
-    console.log("  longitude  : ", this.longitude);
-    console.log("  altitude   : ", this.altitude);
+    console.log("  Speed   : ", gps.speed);
+    console.log("  Course  : ", gps.course);
+    console.log("  latitude   : ", gps.latitude);
+    console.log("  longitude  : ", gps.longitude);
+    console.log("  altitude   : ", gps.altitude);
     console.log("  pitch        : ", imu.gyro.pitch);
-    console.log("  roll         : ", imu.gyro.roll);
-    console.log("  yaw          : ", imu.gyro.yaw);
     console.log("--------------------------------------");
 
   });
