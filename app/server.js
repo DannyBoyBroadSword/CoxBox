@@ -2,12 +2,23 @@ var Raspi = require("raspi-io");
 var five = require("johnny-five");
 var pitft = require("pitft");
 var sleep = require('sleep');
+var events = require('events');
+
 
 var fb = pitft("/dev/fb1"); // Returns a framebuffer in direct mode.  See the clock.js example for double buffering mode
 var xMax = fb.size().width;
 var yMax = fb.size().height;
-var latitude;
-var longitude;
+var sendBuffer = new events.EventEmitter();
+
+
+sendBuffer.on('data', function(){
+   fb.clear();
+   fb.text(0,50,"Fuck",true);
+});
+
+// Fire the connection event
+
+
 // Clear the screen buffer
 fb.clear();
 fb.color(1, 1, 1); // Set the color to whit
@@ -45,10 +56,9 @@ board.on("ready", function() {
   gps.on("change", function() {
     console.log("position");
     console.log("  latitude   : ", this.latitude);
-    latitude = this.latitude;
     console.log("  longitude  : ", this.longitude);
     longitude = this.longitude
     console.log("--------------------------------------");
-    displayPush();
+    sendBuffer.emit('data');
   });
 });

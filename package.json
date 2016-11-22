@@ -15,7 +15,8 @@
     "raspi-wiringpi":"latest",
     "raspi-io":"latest",
     "pitft": "~0.0.11",
-    "sleep":"latest"
+    "sleep":"latest",
+    "events":"latest"
   },
   "engines": {
     "node": "0.12.0"
