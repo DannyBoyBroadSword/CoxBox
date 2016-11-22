@@ -16,7 +16,7 @@ fb.color(1, 1, 1); // Set the color to whit
 fb.font("fantasy", 12); // Use the "fantasy" font with size 12
 
 fb.text(0,20,"Latitude:",false);
-fb.text(0,40,"Longitude:",false);
+fb.text(0,0,"Longitude:",false);
 fb.text(0,60,"Speed:",false);
 fb.text(0,80,"Course:",false);
 fb.text(0,100,"Longitude:",false);
