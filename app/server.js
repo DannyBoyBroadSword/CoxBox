@@ -112,7 +112,7 @@ board.on("ready", function() {
     var screenY = ((190 - 50) / (3220 - 996)) * data.y;
     console.log("  screenX   : ", screenX);
     console.log("  screenY  : ", screeny);
-  }
+  });
 
 
 
