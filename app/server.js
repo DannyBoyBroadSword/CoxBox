@@ -5,12 +5,12 @@ var sleep = require('sleep');
 //var pitftTouch = require('pitft-touch');
 
 var WriteVolumeAddress=0x4B;
-var ReadStrokeAddress=8;
+var ReadStrokeAddress=08;
 var volumeLevel=31;
 var isStarted=false;
 
 var fb = pitft("/dev/fb1"); // Returns a framebuffer in direct mode.  See the clock.js example for double buffering mode
-//var touchscreen = pitftTouch("/dev/input/touchscreen");
+var touchscreen = pitftTouch("/dev/input/touchscreen");
 
 var xMax = fb.size().width;
 console.log(xMax);
