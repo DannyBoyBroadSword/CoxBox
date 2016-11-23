@@ -60,13 +60,13 @@ board.on("ready", function() {
 
   //create a cunction that writes Volume
   function writeVolume(address,volume){
-    return board.io.i2cwrite(address,volume)
+    return board.io.i2cWrite(address,volume)
     //sample writeVolume(WriteVolumeAddress,defaultVolumeLevel);
   }
 
   //create a function that read's stroke rate.
   function readStrokeRate(address){
-    return board.io.i2cread(address,4,true);
+    return board.io.i2cRead(address,4,true);
     //sample readStrokeRate(ReadStrokeAddress);
   }
 
