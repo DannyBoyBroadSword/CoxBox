@@ -71,7 +71,7 @@ board.on("ready", function() {
   }
 
   //default volume
-  writeVolume(writeVolumeAddress,volumeLevel);
+  writeVolume(WriteVolumeAddress,volumeLevel);
 
   buttonOne.on("press", function() {
     writeVolume(WriteVolumeAddress,VolumeLevel+1);
@@ -80,7 +80,7 @@ board.on("ready", function() {
   });
 
   buttonTwo.on("press", function() {
-    writeVolume(writeVolumeAddress,VolumeLevel-1);
+    writeVolume(WriteVolumeAddress,VolumeLevel-1);
     VolumeLevel = VolumeLevel-1
     console.log( "Decreased Volume" );
   });
