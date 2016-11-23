@@ -33,7 +33,7 @@ var board = new five.Board({
 
 board.on("ready", function() {
   //Prepare i2c Data
-  //new five.Pin('SDA0');
+  new five.Pin('SDA0');
 
   //prepare buttons from TFT
   var buttonOne = new five.Button(0);
@@ -53,7 +53,7 @@ board.on("ready", function() {
     pins: ['P1-8', 'P1-10']
   });
 
-  /*
+
   //create a function that reads the Volume.
   function readVolume(address){
     return defaultVolumeLevel;
@@ -67,7 +67,7 @@ board.on("ready", function() {
 
   //create a function that read's stroke rate.
   function readStrokeRate(address){
-    return board.io.i2cread(address,3,true);
+    return board.io.i2cread(address,4,true);
     //sample readStrokeRate(ReadStrokeAddress);
   }
 
@@ -113,7 +113,7 @@ board.on("ready", function() {
     console.log("  screenX   : ", screenX);
     console.log("  screenY  : ", screeny);
   }
-  */
+
 
 
   gps.on("change", function() {
@@ -132,7 +132,7 @@ board.on("ready", function() {
     console.log("Volume");
     console.log("  Volume   : ",volumeLevel);
     console.log("Stroke Rate");
-    //console.log("  Stroke Rate   : ",readStrokeRate(ReadStrokeAddress));
+    console.log("  Stroke Rate   : ",readStrokeRate(ReadStrokeAddress));
     console.log("--------------------------------------");
   });
 });
