@@ -11,6 +11,22 @@ var isStarted=false;
 
 var fb = pitft("/dev/fb1"); // Returns a framebuffer in direct mode.  See the clock.js example for double buffering mode
 
+var touchscreen = require("pitft-touch");
+
+var touchCount = 0;
+
+touchscreen("/dev/input/touchscreen", function(err, data) {
+    if (err) {
+        throw err;
+    }
+
+    // Stop after 10 touches
+    if (touchCount++ == 10) {
+        data.stop = true;
+    }
+
+    console.log(data);
+});
 
 var xMax = fb.size().width;
 console.log(xMax);
