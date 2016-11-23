@@ -21,5 +21,9 @@ COPY /app ./
 #make it a command
 CMD ["chmod +x ./start.sh"]
 
+CMD ["gpio load i2c"]
+
+CMD ["gpio i2cdetect"]
+
 # npm start will run server.js by default
 CMD ["./start.sh"]
