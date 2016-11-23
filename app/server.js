@@ -91,7 +91,7 @@ board.on("ready", function() {
 
   //create a function that read's stroke rate.
   function readStrokeRate(address){
-    return board.io.i2cRead(address,4,true);
+    return board.io.i2cRead(address,4);
     //sample readStrokeRate(ReadStrokeAddress);
   }
 
