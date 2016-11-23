@@ -10,7 +10,7 @@ var volumeLevel=31;
 var isStarted=false;
 
 var fb = pitft("/dev/fb1"); // Returns a framebuffer in direct mode.  See the clock.js example for double buffering mode
-var touchscreen = pitftTouch("/dev/input/touchscreen");
+
 
 var xMax = fb.size().width;
 console.log(xMax);
@@ -30,6 +30,12 @@ console.log("Starting Board");
 var board = new five.Board({
   io: new Raspi()
 });
+
+/*
+var touch = new DSTouch({
+  address: UU
+});
+*/
 
 board.on("ready", function() {
 
@@ -106,14 +112,11 @@ board.on("ready", function() {
     //doSumting();
   });
 
-  touchscreen.on("data.touch", function() {
-    var screenX = ((270 - 50) / (693 - 3307)) * data.x + 320;
-    var screenY = ((190 - 50) / (3220 - 996)) * data.y;
-    console.log("  screenX   : ", screenX);
-    console.log("  screenY  : ", screeny);
+  /*
+  touch.on("change", function() {
+    console.log(this.x, this.y);
   });
-
-
+  */
 
   gps.on("change", function() {
     console.log("GPS Data");
