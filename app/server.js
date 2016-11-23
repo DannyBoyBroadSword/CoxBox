@@ -33,13 +33,13 @@ var board = new five.Board({
 
 board.on("ready", function() {
   //Prepare i2c Data
-  new five.Pin('SDA0');
+  //new five.Pin('SDA0',five.Pin.i2c);
 
   //prepare buttons from TFT
-  var buttonOne = new five.Button(0);
-  var buttonTwo = new five.Button(3);
-  var buttonThree = new five.Button(4);
-  var buttonFour = new five.Button(2);
+  //var buttonOne = new five.Button(0);
+  //var buttonTwo = new five.Button(3);
+  //var buttonThree = new five.Button(4);
+  //var buttonFour = new five.Button(2);
 
 
   //prepare imu
@@ -53,7 +53,7 @@ board.on("ready", function() {
     pins: ['P1-8', 'P1-10']
   });
 
-
+/*
   //create a function that reads the Volume.
   function readVolume(address){
     return defaultVolumeLevel;
@@ -114,6 +114,7 @@ board.on("ready", function() {
     console.log("  screenY  : ", screeny);
   });
 
+*/
 
 
   gps.on("change", function() {
@@ -132,7 +133,7 @@ board.on("ready", function() {
     console.log("Volume");
     console.log("  Volume   : ",volumeLevel);
     console.log("Stroke Rate");
-    console.log("  Stroke Rate   : ",readStrokeRate(ReadStrokeAddress));
+    //console.log("  Stroke Rate   : ",readStrokeRate(ReadStrokeAddress));
     console.log("--------------------------------------");
   });
 });
