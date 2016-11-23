@@ -17,7 +17,8 @@
     "pitft": "~0.0.11",
     "sleep":"latest",
     "events":"latest",
-    "pitft-touch":"latest"
+    "pitft-touch":"latest",
+    "raspi-i2c":"latest"
   },
   "engines": {
     "node": "0.12.0"
