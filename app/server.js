@@ -1,6 +1,4 @@
 var Raspi = require("raspi-io");
-var raspi = require('raspi');
-var I2C = require('raspi-i2c').I2C;
 var five = require("johnny-five");
 var pitft = require("pitft");
 var sleep = require('sleep');
@@ -34,8 +32,7 @@ var board = new five.Board({
 });
 
 board.on("ready", function() {
-  //Prepare i2c Data
-   var i2c = new I2C();
+
 
   //prepare buttons from TFT
   var buttonOne = new five.Button(0);
@@ -55,6 +52,7 @@ board.on("ready", function() {
     pins: ['P1-8', 'P1-10']
   });
 
+
   //create a function that reads the Volume.
   function readVolume(address){
     return defaultVolumeLevel;
@@ -62,13 +60,13 @@ board.on("ready", function() {
 
   //create a cunction that writes Volume
   function writeVolume(address,volume){
-    return i2c.read(address,volume)
+    return board.io.i2cwrite(address,volume)
     //sample writeVolume(WriteVolumeAddress,defaultVolumeLevel);
   }
 
   //create a function that read's stroke rate.
   function readStrokeRate(address){
-    return i2c.read(address,4,true);
+    return board.io.i2cread(address,4,true);
     //sample readStrokeRate(ReadStrokeAddress);
   }
 
