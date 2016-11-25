@@ -58,13 +58,13 @@ var touch = new DSTouch({
 
 board.on("ready", function() {
 
-
+/*
   //prepare buttons from TFT
   var buttonOne = new five.Button(0);
   var buttonTwo = new five.Button(3);
   var buttonThree = new five.Button(4);
   var buttonFour = new five.Button(2);
-
+*/
 
   //prepare imu
   var imu = new five.IMU({
@@ -77,7 +77,7 @@ board.on("ready", function() {
     pins: ['P1-8', 'P1-10']
   });
 
-
+/*
   //create a function that reads the Volume.
   function readVolume(){
     return defaultVolumeLevel;
@@ -131,7 +131,7 @@ board.on("ready", function() {
     //doSumting();
   });
 
-  /*
+
   touch.on("change", function() {
     console.log(this.x, this.y);
   });
@@ -151,7 +151,7 @@ board.on("ready", function() {
     console.log("MPU6050 Temp");
     console.log("  fahrenheit   : ", imu.thermometer.fahrenheit);
     console.log("Volume");
-    console.log("  Volume   : ",volumeLevel);
+    //console.log("  Volume   : ",volumeLevel);
     console.log("Stroke Rate");
     //console.log("  Stroke Rate   : ",readStrokeRate(ReadStrokeAddress));
     console.log("--------------------------------------");
