@@ -4,12 +4,12 @@ var pitft = require("pitft");
 var sleep = require('sleep');
 //var pitftTouch = require('pitft-touch');
 
-var WriteVolumeAddress=0x4B;
-var ReadStrokeAddress=08;
-var volumeLevel=31;
-var isStarted=false;
+//var WriteVolumeAddress=0x4B;
+//var ReadStrokeAddress=08;
+//var volumeLevel=31;
+//var isStarted=false;
 
-var fb = pitft("/dev/fb1"); // Returns a framebuffer in direct mode.  See the clock.js example for double buffering mode
+//var fb = pitft("/dev/fb1"); // Returns a framebuffer in direct mode.  See the clock.js example for double buffering mode
 
 /*
 var touchscreen = require("pitft-touch");
@@ -31,18 +31,18 @@ touchscreen("/dev/input/touchscreen", function(err, data) {
 });
 */
 
-var xMax = fb.size().width;
-console.log(xMax);
-var yMax = fb.size().height;
-console.log(yMax);
+//var xMax = fb.size().width;
+//console.log(xMax);
+//var yMax = fb.size().height;
+//console.log(yMax);
 
 
 // Clear the screen buffer
-fb.clear();
-fb.color(1, 1, 1); // Set the color to whit
-fb.font("fantasy", 12); // Use the "fantasy" font with size 12
+//fb.clear();
+//fb.color(1, 1, 1); // Set the color to whit
+//fb.font("fantasy", 12); // Use the "fantasy" font with size 12
 
-fb.text(0,20,"This will never work.",false);
+//fb.text(0,20,"This will never work.",false);
 
 console.log("Starting Board");
 
