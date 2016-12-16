@@ -13,6 +13,7 @@
     "raspi":"latest",
     "johnny-five":"latest",
     "raspi-wiringpi":"latest",
+    "serialport":"latest",
     "raspi-io":"latest",
     "pitft": "~0.0.11",
     "sleep":"latest",
