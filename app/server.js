@@ -2,6 +2,16 @@ var Raspi = require("raspi-io");
 var five = require("johnny-five");
 var pitft = require("pitft");
 var sleep = require('sleep');
+var mqtt = require('mqtt')
+
+var options = {
+  port: 19078,
+  clientId: 'Resin-Instance-1',
+  username: "uxtcukqc",
+  password: "Ts2j3EF5B1k-",
+};
+
+var client  = mqtt.connect('mqtt://	m10.cloudmqtt.com',options)
 //var pitftTouch = require('pitft-touch');
 
 //var WriteVolumeAddress=0x4B;
@@ -138,22 +148,35 @@ board.on("ready", function() {
   */
 
   gps.on("change", function() {
+    try{
     console.log("GPS Data");
     console.log("  Speed   : ", gps.speed);
+    client.publish('Speed', gps.speed);
     console.log("  Course  : ", gps.course);
+    client.publish('Course', gps.course);
     console.log("  latitude   : ", gps.latitude);
+    client.publish('latitude', gps.latitude);
     console.log("  longitude  : ", gps.longitude);
+    client.publish('longitude', gps.longitude);
     console.log("  altitude   : ", gps.altitude);
+    client.publish('altitude', gps.altitude);
     console.log("MPU6050 Roll Data");
     console.log("  pitch   : ", imu.gyro.pitch);
+    client.publish('pitch', imu.gyro.pitch);
     console.log("MPU6050 Starting Acceleration");
     console.log("  Acceleration   : ", imu.accelerometer.acceleration);
+    client.publish('Acceleration', imu.accelerometer.acceleration);
     console.log("MPU6050 Temp");
     console.log("  fahrenheit   : ", imu.thermometer.fahrenheit);
+    client.publish('fahrenheit', imu.thermometer.fahrenheit);
     console.log("Volume");
     //console.log("  Volume   : ",volumeLevel);
     console.log("Stroke Rate");
     //console.log("  Stroke Rate   : ",readStrokeRate(ReadStrokeAddress));
     console.log("--------------------------------------");
+  }
+  catch(e){
+    console.log("somethings wrong");
+  }
   });
 });
