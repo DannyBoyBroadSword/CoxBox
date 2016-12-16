@@ -11,7 +11,7 @@ var options = {
   password: "Ts2j3EF5B1k-",
 };
 
-var client  = mqtt.connect('http://	m10.cloudmqtt.com',options)
+var client  = mqtt.connect('mqtt://m10.cloudmqtt.com',options)
 //var pitftTouch = require('pitft-touch');
 
 //var WriteVolumeAddress=0x4B;
