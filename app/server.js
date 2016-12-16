@@ -11,7 +11,7 @@ var options = {
   password: "Ts2j3EF5B1k-",
 };
 
-var client  = mqtt.connect('mqtt://m10.cloudmqtt.com',options)
+var client  = mqtt.connect('http://m10.cloudmqtt.com',options)
 //var pitftTouch = require('pitft-touch');
 
 //var WriteVolumeAddress=0x4B;
@@ -151,24 +151,24 @@ board.on("ready", function() {
     try{
     console.log("GPS Data");
     console.log("  Speed   : ", gps.speed);
-    client.publish('Speed', gps.speed);
+    client.publish('Speed', String(gps.speed));
     console.log("  Course  : ", gps.course);
-    client.publish('Course', gps.course);
+    client.publish('Course', String(gps.course));
     console.log("  latitude   : ", gps.latitude);
-    client.publish('latitude', gps.latitude);
+    client.publish('latitude', String(gps.latitude));
     console.log("  longitude  : ", gps.longitude);
-    client.publish('longitude', gps.longitude);
+    client.publish('longitude', String(gps.longitude));
     console.log("  altitude   : ", gps.altitude);
-    client.publish('altitude', gps.altitude);
+    client.publish('altitude', String(gps.altitude));
     console.log("MPU6050 Roll Data");
     console.log("  pitch   : ", imu.gyro.pitch);
-    client.publish('pitch', imu.gyro.pitch);
+    client.publish('pitch', String(imu.gyro.pitch));
     console.log("MPU6050 Starting Acceleration");
     console.log("  Acceleration   : ", imu.accelerometer.acceleration);
-    client.publish('Acceleration', imu.accelerometer.acceleration);
+    client.publish('Acceleration', String(imu.accelerometer.acceleration));
     console.log("MPU6050 Temp");
     console.log("  fahrenheit   : ", imu.thermometer.fahrenheit);
-    client.publish('fahrenheit', imu.thermometer.fahrenheit);
+    client.publish('fahrenheit', String(imu.thermometer.fahrenheit));
     console.log("Volume");
     //console.log("  Volume   : ",volumeLevel);
     console.log("Stroke Rate");
