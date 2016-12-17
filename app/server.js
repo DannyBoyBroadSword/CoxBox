@@ -151,13 +151,13 @@ board.on("ready", function() {
     try{
     console.log("GPS Data");
     console.log("  Speed   : ", gps.speed);
-    client.publish('Speed', String(gps.speed));
-    console.log("  Course  : ", gps.course);
-    client.publish('Course', String(gps.course));
-    console.log("  latitude   : ", gps.latitude);
-    client.publish('latitude', String(gps.latitude));
-    console.log("  longitude  : ", gps.longitude);
-    client.publish('longitude', String(gps.longitude));
+    client.publish('speed', String(gps.speed));
+    console.log("  bearing  : ", gps.course);
+    client.publish('bearing', String(gps.course));
+    console.log("  lat   : ", gps.latitude);
+    client.publish('lat', String(gps.latitude));
+    console.log("  lon  : ", gps.longitude);
+    client.publish('lon', String(gps.longitude));
     console.log("  altitude   : ", gps.altitude);
     client.publish('altitude', String(gps.altitude));
     console.log("MPU6050 Roll Data");
@@ -177,6 +177,7 @@ board.on("ready", function() {
   }
   catch(e){
     console.log("somethings wrong");
+    client.end()
   }
   });
 });
